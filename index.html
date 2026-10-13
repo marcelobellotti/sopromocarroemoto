@@ -234,6 +234,25 @@ src="https://www.facebook.com/tr?id=937714796060798&ev=PageView&noscript=1"/></n
     transition:transform 0.2s ease, border-color 0.2s ease;
   }
   .carousel img:hover{transform:translateY(-2px);border-color:rgba(207,162,58,0.5);}
+  /* centraliza quando cabe, mas sem cortar o início quando transborda */
+  .carousel a:first-child{margin-left:auto;}
+  .carousel a:last-child{margin-right:auto;}
+
+  .carousel-shell{position:relative;}
+  .car-btn{
+    display:none;
+    position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid rgba(232,223,192,0.25);
+    background:rgba(10,30,66,0.9);color:var(--cream);
+    font-size:26px;line-height:1;cursor:pointer;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .car-btn:hover{background:var(--gold);color:var(--navy-950);}
+  .car-btn.prev{left:-12px;}
+  .car-btn.next{right:-12px;}
+  .car-btn[hidden]{display:none !important;}
+  @media (hover:hover) and (pointer:fine){ .car-btn{display:block;} }
 
   /* ---------- VIDEO (clickable, phone mockup) ---------- */
   .visual-col{padding:8px 0 44px;}
@@ -331,7 +350,6 @@ src="https://www.facebook.com/tr?id=937714796060798&ev=PageView&noscript=1"/></n
     .qr-card{max-width:200px;}
 
     .strip{padding:16px 0 8px;}
-    .carousel{justify-content:center;}
     .carousel img{width:140px;}
 
     footer{padding:44px 0 36px;}
@@ -414,15 +432,32 @@ src="https://www.facebook.com/tr?id=937714796060798&ev=PageView&noscript=1"/></n
 <section class="strip reveal">
   <div class="wrap">
     <div class="strip-label">Uma amostra do que rola no grupo</div>
-    <div class="carousel">
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-jaqueta-couro.jpg" alt="Jaqueta de couro" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-perfume-ck.jpg" alt="Perfume Calvin Klein" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-north-face.jpg" alt="Fleece The North Face" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-tenis-reserva.jpg" alt="Tênis Reserva Nexus Knit" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-barbeador-oneblade.jpg" alt="Aparelho de barbear elétrico" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-garmin-forerunner.jpg" alt="Relógio Garmin Forerunner 55" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-oculos-saint-germain.jpg" alt="Óculos de sol Saint Germain" loading="lazy"></a>
-      <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-creatina-growth.jpg" alt="Creatina Growth Supplements" loading="lazy"></a>
+    <div class="carousel-shell">
+      <button class="car-btn prev" type="button" aria-label="Ver anteriores">&#8249;</button>
+      <div class="carousel">
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-jaqueta-couro.jpg" alt="Jaqueta de couro" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-perfume-ck.jpg" alt="Perfume Calvin Klein" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-north-face.jpg" alt="Fleece The North Face" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-tenis-reserva.jpg" alt="Tênis Reserva Nexus Knit" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-barbeador-oneblade.jpg" alt="Aparelho de barbear elétrico OneBlade" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-garmin-forerunner.jpg" alt="Relógio Garmin Forerunner 55" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-oculos-saint-germain.jpg" alt="Óculos de sol Saint Germain" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-perfume-arabe.jpg" alt="Perfume árabe" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-creatina-growth.jpg" alt="Creatina Growth Supplements" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-camiseta-ck.jpg" alt="Camiseta Calvin Klein" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-medicube-vitc.jpg" alt="Sérum Medicube Vitamina C" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-corta-vento.jpg" alt="Jaqueta corta-vento" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-camisa-social.jpg" alt="Camisa social" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-cetaphil-locao.jpg" alt="Loção Cetaphil" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-kit-camisas-uv.jpg" alt="Kit de camisas com proteção UV" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-mocassim.jpg" alt="Mocassim" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-shampoo-wella.jpg" alt="Shampoo Wella" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-dark-mass.jpg" alt="Hipercalórico Dark Mass" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/moda-camiseta-insider.jpg" alt="Camiseta Insider" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/beleza-combo-nativaspa.jpg" alt="Combo Nativa SPA" loading="lazy"></a>
+        <a href="https://sendwich.pro/grupos/promos-bellotti" target="_blank" rel="noopener"><img src="assets/gallery/esporte-kit-shorts.jpg" alt="Kit de shorts" loading="lazy"></a>
+      </div>
+      <button class="car-btn next" type="button" aria-label="Ver próximas">&#8250;</button>
     </div>
   </div>
 </section>
@@ -490,6 +525,26 @@ src="https://www.facebook.com/tr?id=937714796060798&ev=PageView&noscript=1"/></n
   document.querySelectorAll('[data-cta]').forEach(function(el){
     el.addEventListener('click', function(){ sendLead(el.dataset.cta); });
   });
+
+  // Setas do carrossel (desktop)
+  (function(){
+    const car = document.querySelector('.carousel');
+    const prev = document.querySelector('.car-btn.prev');
+    const next = document.querySelector('.car-btn.next');
+    if (!car || !prev || !next) return;
+    const step = () => Math.max(car.clientWidth * 0.8, 150);
+    prev.addEventListener('click', () => car.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => car.scrollBy({ left:  step(), behavior: 'smooth' }));
+    function update(){
+      const max = car.scrollWidth - car.clientWidth;
+      prev.hidden = car.scrollLeft <= 4;
+      next.hidden = car.scrollLeft >= max - 4;
+    }
+    car.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  })();
 
   // Redireciona automaticamente pro grupo do WhatsApp após 25s
   const GROUP_LINK = 'https://sendwich.pro/grupos/promos-bellotti';
